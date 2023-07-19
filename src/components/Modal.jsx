@@ -6,14 +6,12 @@ function Modal({ children, isOpen, onClose }) {
   }
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="modal-close" onClick={onClose}>
+    <div>
+        <span onClick={onClose}>
           &times;
         </span>
         {children}
       </div>
-    </div>
   );
 }
 

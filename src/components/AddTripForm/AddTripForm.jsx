@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import styles from './AddTripForm.module.css'
+
 function AddTripForm({ addTrip }) {
   const [city, setCity] = useState('');
   const [startDate, setStartDate] = useState('');
@@ -20,12 +22,13 @@ function AddTripForm({ addTrip }) {
   };
 
   return (
-    <div>
-      <h2>Add Trip Form</h2>
+    <div className={styles.container}>
+      <h2 className={styles.header}>Add Trip</h2>
       <form onSubmit={handleSubmit}>
         <label>
           City:
           <input
+          className={styles.input_data}
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
@@ -50,7 +53,7 @@ function AddTripForm({ addTrip }) {
           />
         </label>
         <br />
-        <button type="submit">Add Trip</button>
+        <button className={styles.button} type="submit">Add Trip</button>
       </form>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import {  Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import TripList from './TripList';
 import TripDetails from './TripDetails';
-import AddTripForm from './AddTripForm';
+import AddTripForm from './AddTripForm/AddTripForm';
 import Modal from './Modal';
 
 function App() {
@@ -27,16 +27,18 @@ function App() {
   };
 
   return (
-    <Routes>
+    <div>
+      <Routes>
         <Route path="/trips" element={<TripList />} />
-        <Route path="/trips/:id" element={<TripDetails/>} />
+        <Route path="/trips/:id" element={<TripDetails />} />
+      </Routes>
 
       <button onClick={() => setShowModal(true)}>Add Trip</button>
-      
+
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <AddTripForm addTrip={addTrip} />
       </Modal>
-    </Routes>
+    </div>
   );
 }
 
