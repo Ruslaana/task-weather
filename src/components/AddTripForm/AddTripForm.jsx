@@ -23,7 +23,6 @@ function AddTripForm({ addTrip }) {
 
   return (
     <div className={styles.container}>
-      <button type="submit">Add Trip</button>
       <form onSubmit={handleSubmit}>
         <label>
           City:

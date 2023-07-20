@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import TripList from '../pages/TripList';
 import TripDetails from './TripDetails';
 import AddTripForm from './AddTripForm/AddTripForm';
 import Modal from '../pages/Modal';
 import WeatherForecast from '../pages/WeatherForecast';
+
+import styles from '../components/App.module.css'
+
 
 function App() {
   const [trips, setTrips] = useState([]);
@@ -35,7 +39,7 @@ function App() {
         <Route path="/trips/:id" element={<TripDetails />} />
       </Routes>
 
-      <button onClick={() => setShowModal(true)}>Add Trip</button>
+      <button className={styles.button} onClick={() => setShowModal(true)}>Add Trip</button>
 
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <AddTripForm addTrip={addTrip} />

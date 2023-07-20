@@ -2,16 +2,16 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import WeatherForecast from '../pages/WeatherForecast';
 
-function TripDetail() {
+function TripDetails() {
   const { id } = useParams();
 
   return (
     <div>
-      <h1>Trip Detail</h1>
+      <h1>Trip Details</h1>
       <p>Trip ID: {id}</p>
       <WeatherForecast />
     </div>
   );
 }
 
-export default TripDetail;
+export default TripDetails;

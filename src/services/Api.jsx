@@ -6,7 +6,8 @@ const API_KEY = 'EWQUHM4BL87DA9JZMMS43GGX2';
 export const fetchWeatherForecast = async (city) => {
   try {
     const today = new Date().toISOString().split('T')[0];
-    const nextWeek = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toString().split('T')[0];
+    const nextWeek = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
     const forecastResponse = await fetch(
       `${FORECAST_BASE_URL}${city}/${today}/${nextWeek}?unitGroup=metric&include=days&key=${API_KEY}&contentType=json`
     );
@@ -17,7 +18,11 @@ export const fetchWeatherForecast = async (city) => {
     );
     const todayData = await todayResponse.json();
 
-    return [...todayData.days, ...forecastData.days];
+    // Перевіряємо, чи є відповіді у API перед отриманням days
+    const forecastDays = forecastData && forecastData.days ? forecastData.days : [];
+    const todayDays = todayData && todayData.days ? todayData.days : [];
+
+    return [...todayDays, ...forecastDays];
   } catch (error) {
     console.error(error);
     return null;

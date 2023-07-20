@@ -9,9 +9,9 @@ function TripList() {
         <li>
           <Link to="/trips/1">Trip 1</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/trips/2">Trip 2</Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
