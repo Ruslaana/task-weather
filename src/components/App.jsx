@@ -4,6 +4,7 @@ import TripList from './TripList';
 import TripDetails from './TripDetails';
 import AddTripForm from './AddTripForm/AddTripForm';
 import Modal from './Modal';
+import WeatherForecast from '../pages/WeatherForecast';
 
 function App() {
   const [trips, setTrips] = useState([]);
@@ -29,6 +30,7 @@ function App() {
   return (
     <div>
       <Routes>
+      <Route path="/" element={<WeatherForecast />} />
         <Route path="/trips" element={<TripList />} />
         <Route path="/trips/:id" element={<TripDetails />} />
       </Routes>
