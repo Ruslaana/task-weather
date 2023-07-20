@@ -20,6 +20,7 @@ function WeatherForecast({ city }) {
   return (
     <div>
       <h3>Weather Forecast</h3>
+      <input type="text" placeholder="Search your trip" />     
       {forecast.map((day) => (
         <div key={day.date}>
           <h4>{day.date}</h4>

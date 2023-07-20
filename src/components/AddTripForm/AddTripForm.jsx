@@ -23,12 +23,12 @@ function AddTripForm({ addTrip }) {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.header}>Add Trip</h2>
+      <button type="submit">Add Trip</button>
       <form onSubmit={handleSubmit}>
         <label>
           City:
           <input
-          className={styles.input_data}
+            className={styles.input_data}
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
