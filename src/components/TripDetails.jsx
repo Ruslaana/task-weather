@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import WeatherForecast from './WeatherForecast';
+import WeatherForecast from '../pages/WeatherForecast';
 
 function TripDetail() {
   const { id } = useParams();

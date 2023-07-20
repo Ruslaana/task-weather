@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import TripList from './TripList';
+import TripList from '../pages/TripList';
 import TripDetails from './TripDetails';
 import AddTripForm from './AddTripForm/AddTripForm';
-import Modal from './Modal';
+import Modal from '../pages/Modal';
 import WeatherForecast from '../pages/WeatherForecast';
 
 function App() {
