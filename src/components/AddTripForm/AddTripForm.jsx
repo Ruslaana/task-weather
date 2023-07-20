@@ -53,7 +53,8 @@ function AddTripForm({ addTrip }) {
           />
         </label>
         <br />
-        <button className={styles.button} type="submit">Add Trip</button>
+        <button className={styles.button} type="submit">Save</button>
+        <button className={styles.button} type="submit">Cancel</button>
       </form>
     </div>
   );
