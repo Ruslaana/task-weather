@@ -1,6 +1,7 @@
+// AddTripForm.js
 import React, { useState } from 'react';
 
-import styles from './AddTripForm.module.css'
+import styles from './AddTripForm.module.css';
 
 function AddTripForm({ addTrip }) {
   const [city, setCity] = useState('');
@@ -23,11 +24,11 @@ function AddTripForm({ addTrip }) {
 
   return (
     <div className={styles.container}>
-    <h3 className={styles.header}>Create trip</h3>
+      <h3 className={styles.header}>Create trip</h3>
       <form onSubmit={handleSubmit}>
         <label>
           City:
-          <input 
+          <input
             placeholder='Please select a city'
             className={styles.input}
             type="text"
@@ -56,7 +57,7 @@ function AddTripForm({ addTrip }) {
           />
         </label>
         <br />
-        <button className={styles.button} type="submit">Cancel</button>
+        <button className={styles.button} type="button" onClick={() => setCity('')}>Cancel</button>
         <button className={styles.button_save} type="submit">Save</button>
       </form>
     </div>

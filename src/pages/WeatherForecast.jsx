@@ -21,9 +21,9 @@ function WeatherForecast({ city }) {
     <div>
       <h3>Weather Forecast</h3>
       <input type="text" placeholder="Search your trip" /> 
-      <button type='submit '>Search</button>    
+      <button type="submit">Search</button>    
       {forecast.map((day) => (
-        <div key={day.date}>
+        <div>
           <h4>{day.date}</h4>
           <p>City: {city}</p>
           <p>Condition: {day.conditions}</p>
