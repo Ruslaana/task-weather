@@ -1,69 +1,21 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
-import styles from '../components/App.module.css';
-import Loader from './Loader/Loader';
+import React, { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import SharedLayout from './SharedLayout';
 
-// import TripList from '../pages/TripList';
-// import TripDetails from './TripDetails';
-// import AddTripForm from './AddTripForm/AddTripForm';
-// import Modal from '../pages/Modal';
-// import WeatherForecast from '../pages/WeatherForecast';
-
-const TripList = lazy(() => import('../pages/TripList/TripList'));
-const TripDetails = lazy(() => import('./TripDetails'));
-const AddTripForm = lazy(() => import('./AddTripForm/AddTripForm'));
-const Modal = lazy(() => import('../pages/Modal/Modal'));
+const Home = lazy(() => import('../pages/Home/Home'));
+const WeatherDetails = lazy(() => import('../pages/WeatherDetails'));
 const WeatherForecast = lazy(() => import('../pages/WeatherForecast'));
 
-
 function App() {
-  const [trips, setTrips] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    // Load trips from local storage on initial render
-    const savedTrips = JSON.parse(localStorage.getItem('trips'));
-    if (savedTrips) {
-      setTrips(savedTrips);
-    }
-  }, []);
-
-  useEffect(() => {
-    // Save trips to local storage whenever it changes
-    localStorage.setItem('trips', JSON.stringify(trips));
-  }, [trips]);
-
-  const addTrip = (newTrip) => {
-    setTrips([...trips, newTrip]);
-    setShowModal(false); // Закриваємо модальне вікно після додавання подорожі
-  };
-
-  const deleteTrip = (id) => {
-    setTrips(trips.filter((trip) => trip.id !== id));
-  };
-
   return (
-    <>
-      <nav className={styles.Navigation}>
-        <NavLink className={styles.link} to="/">Weather Forecast</NavLink>
-        <NavLink className={styles.link} to="/trips">My Trips</NavLink>
-      </nav>
-
-    <Suspense fallback={<Loader/>}>
-      <Routes>
-        <Route path="/" index element={<WeatherForecast />} />
-        <Route path="/trips" element={<TripList trips={trips} onDeleteTrip={deleteTrip} />} /> {/* Передаємо onDeleteTrip */}
-        <Route path="/trips/:city" element={<TripDetails />} />
-        <Route path="*" element={<WeatherForecast />}  />
-      </Routes>
-
-      <button className={styles.button} onClick={() => setShowModal(true)}>Add Trip</button>
-
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <AddTripForm addTrip={addTrip} />
-      </Modal>
-      </Suspense>
-    </>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />}>
+          <Route path="weatherforecast" element={<WeatherForecast />} />
+          <Route path="weatherdetail" element={<WeatherDetails />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
 

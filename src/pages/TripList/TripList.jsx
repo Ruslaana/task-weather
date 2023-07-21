@@ -10,8 +10,6 @@ function TripList({ trips, onDeleteTrip }) {
   return (
     <div>
       <h2>Trip List</h2>
-      <input type="text" placeholder="Search your trip" />
-      <button type="submit">Search</button>
       <ul>
         {trips.map((trip) => (
           <li key={trip.id}>
