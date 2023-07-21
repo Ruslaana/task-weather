@@ -24,8 +24,8 @@ function WeatherForecast({ city }) {
       <button type="submit">Search</button>    
       {forecast.map((day) => (
         <div>
-          <h4>{day.date}</h4>
-          {/* <p>City: {city}</p> */}
+          <h4>City: {city}</h4>
+          <p>Day: {day.date}</p>
           <p>Condition: {day.conditions}</p>
           <p>Temperature: {day.temp}</p>
         </div>
