@@ -26,8 +26,9 @@ function AddTripForm({ addTrip }) {
       <form onSubmit={handleSubmit}>
         <label>
           City:
-          <input
-            className={styles.input_data}
+          <input 
+            placeholder='Please select a city'
+            className={styles.input}
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
@@ -37,6 +38,7 @@ function AddTripForm({ addTrip }) {
         <label>
           Start Date:
           <input
+            className={styles.input}
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
@@ -46,6 +48,7 @@ function AddTripForm({ addTrip }) {
         <label>
           End Date:
           <input
+            className={styles.input}
             type="date"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
