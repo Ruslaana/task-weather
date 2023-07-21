@@ -9,10 +9,10 @@ import Loader from './Loader/Loader';
 // import Modal from '../pages/Modal';
 // import WeatherForecast from '../pages/WeatherForecast';
 
-const TripList = lazy(() => import('../pages/TripList'));
+const TripList = lazy(() => import('../pages/TripList/TripList'));
 const TripDetails = lazy(() => import('./TripDetails'));
 const AddTripForm = lazy(() => import('./AddTripForm/AddTripForm'));
-const Modal = lazy(() => import('../pages/Modal'));
+const Modal = lazy(() => import('../pages/Modal/Modal'));
 const WeatherForecast = lazy(() => import('../pages/WeatherForecast'));
 
 
@@ -38,6 +38,10 @@ function App() {
     setShowModal(false); // Закриваємо модальне вікно після додавання подорожі
   };
 
+  const deleteTrip = (id) => {
+    setTrips(trips.filter((trip) => trip.id !== id));
+  };
+
   return (
     <>
       <nav className={styles.Navigation}>
@@ -48,7 +52,7 @@ function App() {
     <Suspense fallback={<Loader/>}>
       <Routes>
         <Route path="/" index element={<WeatherForecast />} />
-        <Route path="/trips" element={<TripList trips={trips} />} />
+        <Route path="/trips" element={<TripList trips={trips} onDeleteTrip={deleteTrip} />} /> {/* Передаємо onDeleteTrip */}
         <Route path="/trips/:city" element={<TripDetails />} />
         <Route path="*" element={<WeatherForecast />}  />
       </Routes>

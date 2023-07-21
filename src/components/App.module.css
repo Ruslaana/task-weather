@@ -1,11 +1,8 @@
 .Navigation{
-  font-size: 18px;
-  font-weight: 500;
-  min-height: 34px;
   padding-right: 24px;
   padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .link{
@@ -13,7 +10,7 @@
   color: black;
   margin-right: 20px;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 500;
 }
 

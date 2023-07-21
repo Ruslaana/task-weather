@@ -8,6 +8,7 @@ function WeatherForecast({ city }) {
     const getWeatherForecast = async () => {
       const mergedData = await fetchWeatherForecast(city);
       setForecast(mergedData);
+      // console.log(mergedData)
     };
 
     getWeatherForecast();
@@ -19,13 +20,11 @@ function WeatherForecast({ city }) {
 
   return (
     <div>
-      <h3>Weather Forecast</h3>
-      <input type="text" placeholder="Search your trip" /> 
-      <button type="submit">Search</button>    
+      <h3>Weather Forecast</h3>   
       {forecast.map((day) => (
         <div>
           <h4>City: {city}</h4>
-          <p>Day: {day.date}</p>
+          <p>Day: {day.datetime}</p>
           <p>Condition: {day.conditions}</p>
           <p>Temperature: {day.temp}</p>
         </div>
