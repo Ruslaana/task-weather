@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './TripList.module.css';
 
 function TripList({ trips, onDeleteTrip }) { 
   const handleDeleteTrip = (id) => {
@@ -15,7 +16,7 @@ function TripList({ trips, onDeleteTrip }) {
         {trips.map((trip) => (
           <li key={trip.id}>
             <Link to={`/trips/${trip.id}`}>{trip.city}</Link>
-            <button onClick={() => handleDeleteTrip(trip.id)}>Delete</button>
+            <button className={styles.btn_delete} onClick={() => handleDeleteTrip(trip.id)}>Delete</button>
           </li>
         ))}
       </ul>
