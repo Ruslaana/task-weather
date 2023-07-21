@@ -23,6 +23,7 @@ function AddTripForm({ addTrip }) {
 
   return (
     <div className={styles.container}>
+    <h3 className={styles.header}>Create trip</h3>
       <form onSubmit={handleSubmit}>
         <label>
           City:
@@ -55,8 +56,8 @@ function AddTripForm({ addTrip }) {
           />
         </label>
         <br />
-        <button className={styles.button} type="submit">Save</button>
         <button className={styles.button} type="submit">Cancel</button>
+        <button className={styles.button_save} type="submit">Save</button>
       </form>
     </div>
   );

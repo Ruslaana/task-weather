@@ -18,9 +18,10 @@
 }
 
 .close {
-  color: #aaa;
+  color: #575656;
   float: right;
-  font-size: 28px;
+  padding: 10px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
 }
