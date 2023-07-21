@@ -13,7 +13,6 @@ function WeatherForecast({ city }) {
       try {
         setIsLoading(true);
         const mergedData = await fetchWeatherForecast(city);
-        mergedData.shift();
         setForecast(mergedData);
         } catch (error) {
           console.log(error)

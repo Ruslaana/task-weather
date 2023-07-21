@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Modal from '../Modal/Modal';
 import AddTripForm from '../../components/AddTripForm/AddTripForm';
 import TripList from '../TripList/TripList';
 
 import styles from './Home.module.css';
+import { Outlet } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 export default function Home() {
   const [trips, setTrips] = useState([]);
@@ -27,9 +29,9 @@ export default function Home() {
     setShowModal(false); // Закриваємо модальне вікно після додавання подорожі
   };
 
-  // const deleteTrip = id => {
-  //   setTrips(trips.filter(trip => trip.id !== id));
-  // };
+  const deleteTrip = id => {
+    setTrips(trips.filter(trip => trip.id !== id));
+  };
 
   return (
     <div>
@@ -38,7 +40,7 @@ export default function Home() {
         <button type="submit">Search</button>
       </div>
 
-      <TripList />
+      <TripList trips={trips} onDeleteTrip={deleteTrip}/>
 
       <button className={styles.button} onClick={() => setShowModal(true)}>
         Add Trip
@@ -47,6 +49,9 @@ export default function Home() {
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <AddTripForm addTrip={addTrip} />
       </Modal>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }
