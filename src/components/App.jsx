@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import styles from '../components/App.module.css';
 import Loader from './Loader/Loader';
 
@@ -40,11 +40,16 @@ function App() {
 
   return (
     <>
+      <nav className={styles.Navigation}>
+        <NavLink className={styles.link} to="/">Weather Forecast</NavLink>
+        <NavLink className={styles.link} to="/trips">My Trips</NavLink>
+      </nav>
+
     <Suspense fallback={<Loader/>}>
       <Routes>
         <Route path="/" index element={<WeatherForecast />} />
         <Route path="/trips" element={<TripList trips={trips} />} />
-        <Route path="/trips/:id" element={<TripDetails />} />
+        <Route path="/trips/:city" element={<TripDetails />} />
         <Route path="*" element={<WeatherForecast />}  />
       </Routes>
 

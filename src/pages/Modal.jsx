@@ -30,7 +30,7 @@ function Modal({ children, isOpen, onClose }) {
 
   return (
     <div className={styles.modal} onClick={handleBackdropClick}>
-      <div className="modal-content">
+      <div>
         <span className={styles.close} onClick={onClose}>&times;</span>
         {children}
       </div>

@@ -25,7 +25,7 @@ function WeatherForecast({ city }) {
       {forecast.map((day) => (
         <div>
           <h4>{day.date}</h4>
-          <p>City: {city}</p>
+          {/* <p>City: {city}</p> */}
           <p>Condition: {day.conditions}</p>
           <p>Temperature: {day.temp}</p>
         </div>
