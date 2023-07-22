@@ -36,8 +36,8 @@ export default function Home() {
   return (
     <div>
       <div>
-        <input type="text" placeholder="Search your trip" />
-        <button type="submit">Search</button>
+        <input className={styles.search_trip} type="text" placeholder="Search your trip" />
+        <button className={styles.submit} type="submit">Search</button>
       </div>
 
       <TripList trips={trips} onDeleteTrip={deleteTrip}/>

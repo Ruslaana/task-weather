@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TripList.module.css';
-import TripItem from '../../components/TripItem';
+import TripItem from '../../components/TripItem/TripItem';
 
 function TripList({ trips, onDeleteTrip }) {
   const handleDeleteTrip = id => {
