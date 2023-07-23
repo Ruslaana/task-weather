@@ -9,7 +9,7 @@ function TripDetails() {
     <div>
       <h1>Trip Details</h1>
       <p>Trip to {city}</p>
-      <WeatherForecast />
+      <WeatherForecast city={city} />
     </div>
   );
 }

@@ -14,7 +14,7 @@ function TripList({ trips, onDeleteTrip }) {
       <ul>
         {trips.map(trip => (
           <li key={trip.id}>
-            <NavLink className={styles.link} to={'weatherforecast'} city={trip.city}> 
+            <NavLink className={styles.link} to={`weatherforecast/${trip.city}`} city={trip.city}> 
               <TripItem trip={trip} />
             </NavLink>
             <button

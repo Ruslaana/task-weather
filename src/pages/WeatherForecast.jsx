@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { fetchWeatherForecast } from '../services/Api';
 import Loader from '../components/Loader/Loader';
+import { useParams } from 'react-router-dom';
 
-function WeatherForecast({ city }) {
+function WeatherForecast() {
+  const { id } = useParams();
   const [forecast, setForecast] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (!city) return
-
-    const getWeatherForecast = async (city) => {
+    const getWeatherForecast = async () => {
       try {
         setIsLoading(true);
-        const mergedData = await fetchWeatherForecast(city);
+        const mergedData = await fetchWeatherForecast(id);
         setForecast(mergedData);
         } catch (error) {
           console.log(error)
@@ -20,8 +20,8 @@ function WeatherForecast({ city }) {
         setIsLoading(false);
       }
     }
-    getWeatherForecast(city);
-  }, [city]);
+    getWeatherForecast();
+  }, [id]);
 
   return (
     <div>

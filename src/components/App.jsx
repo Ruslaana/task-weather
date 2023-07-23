@@ -12,7 +12,7 @@ function App() {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route path="*" element={<Home />}>
-          <Route path="weatherforecast" element={<WeatherForecast />} />
+          <Route path="weatherforecast/:id" element={<WeatherForecast />} />
           <Route path="weatherdetail" element={<WeatherDetails />} />
         </Route>
       </Route>
