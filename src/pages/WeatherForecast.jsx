@@ -3,6 +3,8 @@ import { fetchWeatherForecast } from '../services/Api';
 import Loader from '../components/Loader/Loader';
 import { useParams } from 'react-router-dom';
 
+import styles from './WeatherForecats.module.css'
+
 function WeatherForecast() {
   const { id } = useParams();
   const [forecast, setForecast] = useState(null);
@@ -24,17 +26,17 @@ function WeatherForecast() {
   }, [id]);
 
   return (
-    <div>
+    <ul className={styles.list}>
+    {/* <h3>Week</h3>    */}
     {isLoading && <Loader />}
-      <h3>Week</h3>   
       {forecast?.length > 0 && forecast.map((day) => ( //немає нічого унікального в масиві, який приходить з беку
-        <div key={day.datetime}>
-          <p>Day: {day.datetime}</p>
-          <p>Condition: {day.conditions}</p>
-          <p>Temperature: {day.temp}</p> 
-        </div>
+        <li key={day.datetime}>
+          <p>{day.datetime}</p>
+          <p>{day.conditions}</p>
+          <p>{day.temp}</p> 
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

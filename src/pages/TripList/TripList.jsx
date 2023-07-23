@@ -11,7 +11,7 @@ function TripList({ trips, onDeleteTrip }) {
   return (
     <div>
       <h2>Trip List</h2>
-      <ul>
+      <ul className={styles.list}>
         {trips.map(trip => (
           <li key={trip.id}>
             <NavLink className={styles.link} to={`weatherforecast/${trip.city}`} city={trip.city}> 
@@ -25,6 +25,7 @@ function TripList({ trips, onDeleteTrip }) {
             </button>
           </li>
         ))}
+      
       </ul>
     </div>
   );

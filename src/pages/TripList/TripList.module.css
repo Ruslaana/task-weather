@@ -13,9 +13,14 @@
   background-color: #5f87a4;
 }
 
+.list{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
 .link{
   display: flex;
-  flex-direction: row;
   flex-direction: row;
   text-decoration: none;
   color: black;
