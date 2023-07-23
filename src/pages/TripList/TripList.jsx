@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './TripList.module.css';
 import TripItem from '../../components/TripItem/TripItem';
 
@@ -14,9 +14,9 @@ function TripList({ trips, onDeleteTrip }) {
       <ul>
         {trips.map(trip => (
           <li key={trip.id}>
-            <Link to={'weatherforecast'} city={trip.city}> 
+            <NavLink className={styles.link} to={'weatherforecast'} city={trip.city}> 
               <TripItem trip={trip} />
-            </Link>
+            </NavLink>
             <button
               className={styles.btn_delete}
               onClick={() => handleDeleteTrip(trip.id)}

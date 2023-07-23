@@ -10,5 +10,18 @@
 }
 
 .btn_delete:hover{
-  background-color: #bddef5;
+  background-color: #5f87a4;
 }
+
+.link{
+  display: flex;
+  flex-direction: row;
+  flex-direction: row;
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover{
+  color: #6e9bbb;
+}
+

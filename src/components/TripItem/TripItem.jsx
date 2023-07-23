@@ -6,9 +6,9 @@ function TripItem({ trip }) {
 
   return (
     <>
-      <h3>{city}</h3>
       <div className={styles.trip_item}>
       <img src="" alt={city}></img>
+      <p>{city}</p>
       <p>Start Date: {startDate}</p>
       <p>End Date: {endDate}</p>
       </div>
