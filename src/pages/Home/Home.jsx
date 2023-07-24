@@ -28,7 +28,7 @@ export default function Home() {
 
   const addTrip = newTrip => {
     setTrips([...trips, newTrip]);
-    setShowModal(false); // Закриваємо модальне вікно після додавання подорожі
+    setShowModal(false); // Close modal after adding trip
   };
 
   const deleteTrip = id => {
