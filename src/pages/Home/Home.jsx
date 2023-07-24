@@ -55,7 +55,3 @@ export default function Home() {
     </div>
   );
 }
-
-// {/* <Route path="/trips" element={<TripList trips={trips} onDeleteTrip={deleteTrip} />} />
-//     <Route path="/trips/:id" element={<TripDetails />} />
-//     <Route path="*" element={<WeatherForecast />}  /> */}
