@@ -42,6 +42,12 @@ export default function Home() {
     setSearchResults(filteredTrips);
   };
 
+  const handleKeyPress = e => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div>
       <div>
@@ -51,6 +57,7 @@ export default function Home() {
           placeholder="Search your trip"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
+          onKeyPress={handleKeyPress} 
         />
         <button className={styles.submit} type="submit" onClick={handleSearch}>
           Search
