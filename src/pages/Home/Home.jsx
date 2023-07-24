@@ -10,6 +10,8 @@ import Loader from '../../components/Loader/Loader';
 export default function Home() {
   const [trips, setTrips] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     // Load trips from local storage on initial render
@@ -33,14 +35,32 @@ export default function Home() {
     setTrips(trips.filter(trip => trip.id !== id));
   };
 
+  const handleSearch = () => {
+    const filteredTrips = trips.filter(trip =>
+      trip.city.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(filteredTrips);
+  };
+
   return (
     <div>
       <div>
-        <input className={styles.search_trip} type="text" placeholder="Search your trip" />
-        <button className={styles.submit} type="submit">Search</button>
+        <input
+          className={styles.search_trip}
+          type="text"
+          placeholder="Search your trip"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+        />
+        <button className={styles.submit} type="submit" onClick={handleSearch}>
+          Search
+        </button>
       </div>
 
-      <TripList trips={trips} onDeleteTrip={deleteTrip}/>
+      <TripList
+        trips={searchResults.length > 0 ? searchResults : trips}
+        onDeleteTrip={deleteTrip}
+      />
 
       <button className={styles.button} onClick={() => setShowModal(true)}>
         Add Trip
