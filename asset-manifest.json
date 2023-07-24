@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/task_weather/static/css/main.20b27034.css",
+    "main.js": "/task_weather/static/js/main.d94c2c5e.js",
+    "static/css/991.51783084.chunk.css": "/task_weather/static/css/991.51783084.chunk.css",
+    "static/js/991.816a245d.chunk.js": "/task_weather/static/js/991.816a245d.chunk.js",
+    "static/js/870.5391ae42.chunk.js": "/task_weather/static/js/870.5391ae42.chunk.js",
+    "static/css/582.bc46e1f2.chunk.css": "/task_weather/static/css/582.bc46e1f2.chunk.css",
+    "static/js/582.90091032.chunk.js": "/task_weather/static/js/582.90091032.chunk.js",
+    "index.html": "/task_weather/index.html",
+    "main.20b27034.css.map": "/task_weather/static/css/main.20b27034.css.map",
+    "main.d94c2c5e.js.map": "/task_weather/static/js/main.d94c2c5e.js.map",
+    "991.51783084.chunk.css.map": "/task_weather/static/css/991.51783084.chunk.css.map",
+    "991.816a245d.chunk.js.map": "/task_weather/static/js/991.816a245d.chunk.js.map",
+    "582.bc46e1f2.chunk.css.map": "/task_weather/static/css/582.bc46e1f2.chunk.css.map",
+    "582.90091032.chunk.js.map": "/task_weather/static/js/582.90091032.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20b27034.css",
+    "static/js/main.d94c2c5e.js"
+  ]
+}
